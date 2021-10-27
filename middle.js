@@ -47,16 +47,14 @@ const middle = function(array) {
   let arrayLength = array.length;
   let arrayMiddle = [];
   if (arrayLength <= 2) {
-    return "[]";
+    return [];
   }
 
   //if it's even
   if (arrayLength % 2 === 0) {
     arrayMiddle.push(array[arrayLength / 2 - 1]);
     arrayMiddle.push(array[arrayLength / 2]);
-  }
-  // if it's odd
-  if (arrayLength % 2 === 1) {
+  } else {
     arrayMiddle.push(array[Math.floor(arrayLength / 2)]);
   }
   return arrayMiddle;
@@ -64,6 +62,6 @@ const middle = function(array) {
 
 
 
-console.log(middle([1, 2, 3, 4, 5, 7, 3, 6]));
+console.log(middle([1, 2]));
 
 
