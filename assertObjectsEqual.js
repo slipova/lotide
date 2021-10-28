@@ -1,3 +1,4 @@
+//console logs the message
 const assertObjectsEqual = function(actual, expected) {
   if (eqObjects(actual, expected)) {
     console.log('yes');
@@ -6,6 +7,7 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
+//checks if an object is an array
 const eqArrays = function(array1, array2) {
   for (let i of array1) {
     if (array1[i] !== array2[i]) {
@@ -14,7 +16,6 @@ const eqArrays = function(array1, array2) {
   }
   return true;
 };
-
 
 //console.log(assertEqual([1, 2, 3], [1, 2, 3]));
 

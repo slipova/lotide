@@ -1,30 +1,12 @@
-//TEST
-const assertEqual = function(func) {
-  if (func === true) {
-    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
-  } else {
-    console.log(`❌❌❌Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-const eqArrays = function(array1, array2) {
+const assertArraysEqual = function(array1, array2) {
   for (let i of array1) {
-    if (array1[i] !== array2[i]) {
-      return false;
+    if (array1[i] !== array2[i] || array1.length !== array2.length) {
+      console.log(`❌❌❌Assertion Failed: ${array1} and ${array2} are not equal.`);
+      return;
     }
   }
-  return true;
+  console.log(`✅✅✅ Assertion Passed: ${array1} and ${array2} are equal.`);
 };
-
-
-// const eqArrays = function(array1, array2) {
-//   array1.forEach(element1 => {
-//     array2.forEach(element2 => (element1 !== element2) false;
-//       })
-//   })
-// return true;
-// };
-
 
 const words = ["all", "cows", "eat", "grass"];
 
@@ -38,7 +20,7 @@ const map = function(array, callback) {
 const results1 = map(words, word => word[0]);
 console.log(results1);
 
-console.log(assertEqual(eqArrays(results1, ['a', 'c', 'e', 'g'])));
+console.log(assertArraysEqual(results1, ['a', 'c', 'e', 'g']));
 
 /* USING forEach
 const map = function(array) {
