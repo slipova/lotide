@@ -31,7 +31,6 @@
 // assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
 
 
-
 /*
 1.! receive an array into a function
 2.! determine its length
@@ -39,9 +38,6 @@
 4.! if the length is odd, return index of length/2, floored. ex length = 5; 5/2 = 2.5; [2] is the middle element
 5. if array is less than 2 elements long, return empty array
 */
-
-
-//NEEDS TESTING
 
 const middle = function(array) {
   let arrayLength = array.length;

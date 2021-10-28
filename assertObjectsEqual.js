@@ -1,8 +1,8 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+const assertObjectsEqual = function(actual, expected) {
+  if (eqObjects(actual, expected)) {
+    console.log('yes');
   } else {
-    console.log(`❌❌❌Assertion Failed: ${actual} !== ${expected}`);
+    console.log('no');
   }
 };
 
@@ -16,27 +16,22 @@ const eqArrays = function(array1, array2) {
 };
 
 
-
+//console.log(assertEqual([1, 2, 3], [1, 2, 3]));
 
 const eqObjects = function(object1, object2) {
-  const inspect = require('util').inspect;
-  if (Array.isArray(object1)) {
-    eqArrays(object1, object2);
-    if (true) {
-      console.log(`✅✅✅ Assertion Passed: ${inspect(object1)} === ${inspect(object2)}`);
+  if (Object.keys(object1).length !== Object.keys(object2).length) {
+    return false;
+  }
+  for (let key1 in object1) {
+    console.log(object1[key1], object2[key1]);
+    if (Array.isArray(object1[key1]) && Array.isArray(object2[key1])) {
+      if (!eqArrays(object1[key1], object2[key1])) {
+        return false;
+      }
+    } else if (object1[key1] !== object2[key1]) {
+      return false;
     }
   }
-  if (object1 === object2) {
-    console.log(`✅✅✅ Assertion Passed: ${inspect(object1)} === ${inspect(object2)}`);
-  } else {
-    console.log(`❌❌❌Assertion Failed: ${inspect(object1)} !== ${inspect(object2)}`);
-  }
+  return true;
 }
 
-
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-console.log(eqObjects(ab, ba));
-
-// const abc = { a: "1", b: "2", c: "3" };
-// console.log(assertEqual(eqObjects(ab, abc), false));

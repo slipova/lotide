@@ -1,7 +1,3 @@
-
-
-
-
 const assertArraysEqual = function(array1, array2) {
   for (let i of array1) {
     if (array1[i] !== array2[i] || array1.length !== array2.length) {
@@ -11,8 +7,6 @@ const assertArraysEqual = function(array1, array2) {
   }
   console.log(`✅✅✅ Assertion Passed: ${array1} and ${array2} are equal.`);
 };
-
-
 
 const without = function(originalArr, unwantedArr) {
   let placeholderArr = [];
