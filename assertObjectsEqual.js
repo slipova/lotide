@@ -1,9 +1,9 @@
 //console logs the message
 const assertObjectsEqual = function(actual, expected) {
   if (eqObjects(actual, expected)) {
-    console.log('yes');
+    console.log('✅✅✅the objects are the same');
   } else {
-    console.log('no');
+    console.log('❌❌❌the objects are not the same');
   }
 };
 
