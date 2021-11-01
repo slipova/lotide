@@ -8,4 +8,4 @@ const assertArraysEqual = function(array1, array2) {
   console.log(`✅✅✅ Assertion Passed: ${array1} and ${array2} are equal.`);
 };
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
+module.exports = assertArraysEqual;
